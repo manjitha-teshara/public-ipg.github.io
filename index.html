@@ -17,7 +17,7 @@
 	<script>
 	function submitBtn(accountNumber,walletNumber,amount,contactNumber){
 			console.log("ck sub btn " + getParameters("id") + " " +accountNumber.value);
-			var req = {
+			let req = {
 				accountNumber: null,
 				walletNumber: null,
 				amount: null,
@@ -39,7 +39,7 @@
 			};
 			xhttp.open("POST", "http://localhost:5000/whatsApp/customer-details", true);
 			xhttp.setRequestHeader("Content-type", "application/json");
-			xhttp.send(req);
+			xhttp.send(JSON.stringify(req));
 	}
 	</script>
 	<style>
